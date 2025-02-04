@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Control Structures in C Programming</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        h1 {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+
+        h2 {
+            font-size: 20px;
+            margin-top: 20px;
+            margin-bottom: 10px;
+        }
+
+        p {
+            font-size: 18px;
+            line-height: 1.6;
+        }
+
+        code {
+            background-color: #f8f8f8;
+            padding: 4px 8px;
+            border-radius: 3px;
+            font-family: monospace;
+        }
+
+        .btn-container {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .btn {
+            background-color: #333;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            background-color: #555;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Control Structures in C Programming</h1>
+    </header>
+    <div class="container">
+        <h2>If Statement</h2>
+        <p>
+            The <code>if</code> statement is used to make decisions in C programming. Its syntax is as follows:
+        </p>
+        <code>
+            if (condition) {<br>
+            &emsp;// code to be executed if the condition is true<br>
+            }
+        </code>
+
+        <h2>Example</h2>
+        <p>
+            Example of using an <code>if</code> statement:
+        </p>
+        <code>
+            #include&lt;stdio.h&gt;<br>
+            int main() {<br>
+            &emsp;int num = 10;<br>
+            &emsp;if (num > 0) {<br>
+            &emsp;&emsp;printf("The number is positive.");<br>
+            &emsp;}<br>
+            &emsp;return 0;<br>
+            }
+        </code>
+
+        <h2>Program Questions</h2>
+        <p>
+            1. Write a C program to check whether a number is even or odd using an <code>if</code> statement.<br>
+            2. Create a program to determine if a student has passed or failed based on their exam score.<br>
+            <!-- Add more questions as needed -->
+
+        <h2>Program Solutions</h2>
+        <p>
+            Solutions for the above questions:
+        </p>
+        <code>
+            // Program 1:<br>
+            #include&lt;stdio.h&gt;<br>
+            int main() {<br>
+            &emsp;int num = 15;<br>
+            &emsp;if (num % 2 == 0) {<br>
+            &emsp;&emsp;printf("The number is even.");<br>
+            &emsp;} else {<br>
+            &emsp;&emsp;printf("The number is odd.");<br>
+            &emsp;}<br>
+            &emsp;return 0;<br>
+            }<br>
+
+            // Program 2:<br>
+            #include&lt;stdio.h&gt;<br>
+            int main() {<br>
+            &emsp;int score = 75;<br>
+            &emsp;if (score >= 50) {<br>
+            &emsp;&emsp;printf("Congratulations! You passed.");<br>
+            &emsp;} else {<br>
+            &emsp;&emsp;printf("Sorry, you failed.");<br>
+            &emsp;}<br>
+            &emsp;return 0;<br>
+            }<br>
+            <!-- Add solutions for other questions -->
+        </code>
+        </div>
+        <div class="btn-container">
+            <a href="C5.html" class="btn">Next</a>
+        </div>
+    </div>
+</body>
+</html>

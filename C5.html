@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Functions and Pointers in C Programming</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        h1 {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+
+        h2 {
+            font-size: 20px;
+            margin-top: 20px;
+            margin-bottom: 10px;
+        }
+
+        p {
+            font-size: 18px;
+            line-height: 1.6;
+        }
+
+        code {
+            background-color: #f8f8f8;
+            padding: 4px 8px;
+            border-radius: 3px;
+            font-family: monospace;
+        }
+
+        .btn-container {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .btn {
+            background-color: #333;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            background-color: #555;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Functions and Pointers in C Programming</h1>
+    </header>
+    <div class="container">
+        <h2>Functions in C</h2>
+        <p>
+            Functions in C are blocks of code that perform a specific task. They allow for code reusability and modularity. The syntax for a function is as follows:
+        </p>
+        <code>
+            return_type function_name(parameters) {<br>
+            &emsp;// code<br>
+            }
+        </code>
+
+        <h2>Example</h2>
+        <p>
+            Example of a simple function in C:
+        </p>
+        <code>
+            #include&lt;stdio.h&gt;<br>
+            int add(int a, int b) {<br>
+            &emsp;return a + b;<br>
+            }<br>
+            int main() {<br>
+            &emsp;int result = add(5, 7);<br>
+            &emsp;printf("Sum: %d", result);<br>
+            &emsp;return 0;<br>
+            }
+        </code>
+
+        <h2>Pointers in C</h2>
+        <p>
+            Pointers are variables that store the memory address of another variable. They are a powerful feature in C programming. The syntax for declaring a pointer is as follows:
+        </p>
+        <code>
+            data_type *pointer_name;
+        </code>
+
+        <h2>Example</h2>
+        <p>
+            Example of using pointers in C:
+        </p>
+        <code>
+            #include&lt;stdio.h&gt;<br>
+            int main() {<br>
+            &emsp;int num = 10;<br>
+            &emsp;int *ptr = &num;<br>
+            &emsp;printf("Value of num: %d", *ptr);<br>
+            &emsp;return 0;<br>
+            }
+        </code>
+
+        <h2>Program Questions</h2>
+        <p>
+            1. Write a C program to find the factorial of a number using a function.<br>
+            2. Create a program to swap two numbers using pointers.<br>
+            <!-- Add more questions as needed -->
+
+        <h2>Program Solutions</h2>
+        <p>
+            Solutions for the above questions:
+        </p>
+        <code>
+            // Program 1:<br>
+            #include&lt;stdio.h&gt;<br>
+            int factorial(int n) {<br>
+            &emsp;if (n == 0 || n == 1) {<br>
+            &emsp;&emsp;return 1;<br>
+            &emsp;} else {<br>
+            &emsp;&emsp;return n * factorial(n - 1);<br>
+            &emsp;}<br>
+            }<br>
+            int main() {<br>
+            &emsp;int num = 5;<br>
+            &emsp;int result = factorial(num);<br>
+            &emsp;printf("Factorial of %d: %d", num, result);<br>
+            &emsp;return 0;<br>
+            }<br>
+
+            // Program 2:<br>
+            #include&lt;stdio.h&gt;<br>
+            void swap(int *a, int *b) {<br>
+            &emsp;int temp = *a;<br>
+            &emsp;*a = *b;<br>
+            &emsp;*b = temp;<br>
+            }<br>
+            int main() {<br>
+            &emsp;int num1 = 10, num2 = 20;<br>
+            &emsp;printf("Before swap: num1 = %d, num2 = %d\n", num1, num2);<br>
+            &emsp;swap(&num1, &num2);<br>
+            &emsp;printf("After swap: num1 = %d, num2 = %d", num1, num2);<br>
+            &emsp;return 0;<br>
+            }<br>
+            <!-- Add solutions for other questions -->
+        </code>
+        </div>
+        <div class="btn-container">
+            <a href="C6.html" class="btn">Next</a>
+        </div>
+    </div>
+</body>
+</html>

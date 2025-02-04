@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Functions and Modules in Python Programming</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        h1 {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+
+        h2 {
+            font-size: 20px;
+            margin-top: 20px;
+            margin-bottom: 10px;
+        }
+
+        p {
+            font-size: 18px;
+            line-height: 1.6;
+        }
+
+        code {
+            background-color: #f8f8f8;
+            padding: 4px 8px;
+            border-radius: 3px;
+            font-family: monospace;
+        }
+
+        .program-container {
+            margin-top: 20px;
+        }
+
+        .question {
+            margin-bottom: 10px;
+        }
+
+        .btn-container {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .btn {
+            background-color: #333;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            background-color: #555;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Functions and Modules in Python Programming</h1>
+    </header>
+    <div class="container">
+        <h2>Functions in Python</h2>
+        <p>
+            Functions are reusable blocks of code that perform a specific task. In Python, you can define functions using the <code>def</code> keyword.
+        </p>
+        <code>
+            def function_name(parameters):<br>
+            &emsp; # Function body
+            &emsp; return result
+        </code>
+
+        <h2>Examples</h2>
+        <div class="program-container">
+            <p class="question">Example 1: Define and call a simple function</p>
+            <code>
+                def greet(name):<br>
+                &emsp; return "Hello, " + name<br>
+                <br>
+                result = greet("John")<br>
+                print(result)
+            </code>
+
+            <p class="question">Example 2: Calculate the square of a number using a function</p>
+            <code>
+                def square(num):<br>
+                &emsp; return num ** 2<br>
+                <br>
+                result = square(5)<br>
+                print(result)
+            </code>
+        </div>
+
+        <h2>Modules in Python</h2>
+        <p>
+            Modules allow you to organize code into separate files. You can import functions and variables from a module into your main program.
+        </p>
+        <code>
+            # Importing a module<br>
+            import module_name<br>
+            <br>
+            # Using a function from the module<br>
+            module_name.function_name(parameters)
+        </code>
+
+        <h2>Program Questions</h2>
+        <div class="program-container">
+            <p class="question">1. Write a Python program to find the factorial of a number using a function.</p>
+            <p class="question">2. Create a module named "calculator" with functions for addition, subtraction, multiplication, and division.</p>
+            <!-- Add more questions as needed -->
+        </div>
+
+        <h2>Program Solutions</h2>
+        <div class="program-container">
+            <p class="question">1. Write a Python program to find the factorial of a number using a function.</p>
+            <code>
+                def factorial(n):<br>
+                &emsp; if n == 0 or n == 1:<br>
+                &emsp;&emsp; return 1<br>
+                &emsp; else:<br>
+                &emsp;&emsp; return n * factorial(n-1)<br>
+                <br>
+                result = factorial(5)<br>
+                print(result)
+            </code>
+
+            <p class="question">2. Create a module named "calculator" with functions for addition, subtraction, multiplication, and division.</p>
+            <code>
+                # calculator.py<br>
+                def add(a, b):<br>
+                &emsp; return a + b<br>
+                <br>
+                def subtract(a, b):<br>
+                &emsp; return a - b<br>
+                <br>
+                def multiply(a, b):<br>
+                &emsp; return a * b<br>
+                <br>
+                def divide(a, b):<br>
+                &emsp; if b != 0:<br>
+                &emsp;&emsp; return a / b<br>
+                &emsp; else:<br>
+                &emsp;&emsp; return "Cannot divide by zero"
+            </code>
+            <!-- Add solutions for other questions -->
+        </div>
+
+        <div class="btn-container">
+            <a href="P6.html" class="btn">Next</a>
+        </div>
+    </div>
+</body>
+</html>

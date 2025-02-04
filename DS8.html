@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Structures Quiz</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        h1 {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+
+        h2 {
+            font-size: 20px;
+            margin-top: 20px;
+            margin-bottom: 10px;
+        }
+
+        p {
+            font-size: 18px;
+            line-height: 1.6;
+        }
+
+        .quiz-container {
+            margin-top: 20px;
+        }
+
+        .question {
+            margin-bottom: 10px;
+        }
+
+        .options {
+            margin-left: 20px;
+        }
+
+        .btn-container {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .btn {
+            background-color: #333;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            background-color: #555;
+        }
+
+        #timer {
+            font-size: 18px;
+            text-align: center;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Data Structures Quiz</h1>
+    </header>
+    <div class="container">
+        <div class="quiz-container">
+            <h2 class="question">1. What is the purpose of a linked list?</h2>
+            <div class="options">
+                <label><input type="radio" name="q1" value="a"> a. To store elements in a sorted order</label><br>
+                <label><input type="radio" name="q1" value="b"> b. To connect nodes in a network</label><br>
+                <label><input type="radio" name="q1" value="c"> c. To implement dynamic data structures</label><br>
+                <label><input type="radio" name="q1" value="d"> d. None of the above</label>
+            </div>
+
+            <h2 class="question">2. Which data structure uses LIFO order?</h2>
+            <div class="options">
+                <label><input type="radio" name="q2" value="a"> a. Queue</label><br>
+                <label><input type="radio" name="q2" value="b"> b. Stack</label><br>
+                <label><input type="radio" name="q2" value="c"> c. Linked List</label><br>
+                <label><input type="radio" name="q2" value="d"> d. Tree</label>
+            </div>
+
+            <!-- Add more questions as needed -->
+
+            <div id="timer"></div>
+
+            <div class="btn-container">
+                <button onclick="startTimer()" class="btn">Start</button>
+                <button onclick="finishQuiz()" class="btn">Finish</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let timer;
+        let timerSeconds = 240; // 4 minutes
+
+        function startTimer() {
+            timer = setInterval(updateTimer, 1000);
+        }
+
+        function updateTimer() {
+            const minutes = Math.floor(timerSeconds / 60);
+            const seconds = timerSeconds % 60;
+            document.getElementById('timer').innerHTML = `Time Remaining: ${minutes}m ${seconds}s`;
+
+            if (timerSeconds === 0) {
+                clearInterval(timer);
+                alert('Time is up! Submit your answers.');
+            }
+
+            timerSeconds--;
+        }
+
+        function finishQuiz() {
+            clearInterval(timer);
+            const totalQuestions = 5;
+            let correctAnswers = 0;
+
+            for (let i = 1; i <= totalQuestions; i++) {
+                const selectedOption = document.querySelector(`input[name="q${i}"]:checked`);
+                if (selectedOption) {
+                    const selectedValue = selectedOption.value;
+                    // Check correct answers, adjust accordingly
+                    if (i === 1 && selectedValue === 'c') {
+                        correctAnswers += 2;
+                    } else if (i === 2 && selectedValue === 'b') {
+                        correctAnswers += 2;
+                    }
+                    // Add more conditions for other questions
+                }
+            }
+
+            const percentage = (correctAnswers / 4) * 100;
+
+            if (percentage > 80) {
+                alert('Congratulations on completing the course successfully!');
+            } else {
+                alert('Try Again.');
+            }
+        }
+    </script>
+</body>
+</html>

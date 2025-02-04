@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Linked Lists in Data Structures Tutorial</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        h1 {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+
+        h2 {
+            font-size: 20px;
+            margin-top: 20px;
+            margin-bottom: 10px;
+        }
+
+        p {
+            font-size: 18px;
+            line-height: 1.6;
+        }
+
+        code {
+            background-color: #f8f8f8;
+            padding: 4px 8px;
+            border-radius: 3px;
+            font-family: monospace;
+        }
+
+        .btn-container {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .btn {
+            background-color: #333;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            background-color: #555;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Linked Lists in Data Structures Tutorial</h1>
+    </header>
+    <div class="container">
+        <h2>Syntax for Linked List Node</h2>
+        <p>
+            A linked list is a linear data structure where elements are stored in nodes, and each node points to the next node in the sequence. The syntax for a linked list node is as follows:
+        </p>
+        <code>
+            struct Node {<br>
+            &emsp;data_type data;<br>
+            &emsp;struct Node* next;<br>
+            };
+        </code>
+
+        <h2>Example</h2>
+        <p>
+            Example of creating a linked list in C:
+        </p>
+        <code>
+            #include&lt;stdio.h&gt;<br>
+            #include&lt;stdlib.h&gt;<br>
+            struct Node {<br>
+            &emsp;int data;<br>
+            &emsp;struct Node* next;<br>
+            };<br>
+            int main() {<br>
+            &emsp;struct Node* head = NULL;<br>
+            &emsp;struct Node* second = NULL;<br>
+            &emsp;struct Node* third = NULL;<br>
+            &emsp;head = (struct Node*)malloc(sizeof(struct Node));<br>
+            &emsp;second = (struct Node*)malloc(sizeof(struct Node));<br>
+            &emsp;third = (struct Node*)malloc(sizeof(struct Node));<br>
+            &emsp;head->data = 1;<br>
+            &emsp;head->next = second;<br>
+            &emsp;second->data = 2;<br>
+            &emsp;second->next = third;<br>
+            &emsp;third->data = 3;<br>
+            &emsp;third->next = NULL;<br>
+            &emsp;return 0;<br>
+            }
+        </code>
+
+        <h2>Program Questions</h2>
+        <p>
+            1. Write a C program to insert a node at the beginning of a linked list.<br>
+            2. Create a program to delete a node with a given key from a linked list.<br>
+            <!-- Add more questions as needed -->
+
+        <h2>Program Solutions</h2>
+        <p>
+            Solutions for the above questions:
+        </p>
+        <code>
+            // Program 1:<br>
+            #include&lt;stdio.h&gt;<br>
+            #include&lt;stdlib.h&gt;<br>
+            struct Node {<br>
+            &emsp;int data;<br>
+            &emsp;struct Node* next;<br>
+            };<br>
+            void insertAtBeginning(struct Node** head_ref, int new_data) {<br>
+            &emsp;struct Node* new_node = (struct Node*)malloc(sizeof(struct Node));<br>
+            &emsp;new_node->data = new_data;<br>
+            &emsp;new_node->next = *head_ref;<br>
+            &emsp;*head_ref = new_node;<br>
+            }<br>
+            int main() {<br>
+            &emsp;struct Node* head = NULL;<br>
+            &emsp;insertAtBeginning(&head, 4);<br>
+            &emsp;insertAtBeginning(&head, 3);<br>
+            &emsp;insertAtBeginning(&head, 2);<br>
+            &emsp;insertAtBeginning(&head, 1);<br>
+            &emsp;return 0;<br>
+            }<br>
+
+            // Program 2:<br>
+            #include&lt;stdio.h&gt;<br>
+            #include&lt;stdlib.h&gt;<br>
+            struct Node {<br>
+            &emsp;int data;<br>
+            &emsp;struct Node* next;<br>
+            };<br>
+            void deleteNode(struct Node** head_ref, int key) {<br>
+            &emsp;struct Node *temp = *head_ref, *prev = NULL;<br>
+            &emsp;if (temp != NULL && temp->data == key) {<br>
+            &emsp;&emsp;*head_ref = temp->next;<br>
+            &emsp;&emsp;free(temp);<br>
+            &emsp;&emsp;return;<br>
+            &emsp;}<br>
+            &emsp;while (temp != NULL && temp->data != key) {<br>
+            &emsp;&emsp;prev = temp;<br>
+            &emsp;&emsp;temp = temp->next;<br>
+            &emsp;}<br>
+            &emsp;if (temp == NULL) return;<br>
+            &emsp;prev->next = temp->next;<br>
+            &emsp;free(temp);<br>
+            }<br>
+            int main() {<br>
+            &emsp;struct Node* head = NULL;<br>
+            &emsp;deleteNode(&head, 2);<br>
+            &emsp;deleteNode(&head, 1);<br>
+            &emsp;return 0;<br>
+            }<br>
+            <!-- Add solutions for other questions -->
+        </code>
+        </div>
+        <div class="btn-container">
+            <a href="DS4.html" class="btn">Next</a>
+        </div>
+    </div>
+</body>
+</html>

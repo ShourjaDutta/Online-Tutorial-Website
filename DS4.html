@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stacks in Data Structures Tutorial</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        h1 {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+
+        h2 {
+            font-size: 20px;
+            margin-top: 20px;
+            margin-bottom: 10px;
+        }
+
+        p {
+            font-size: 18px;
+            line-height: 1.6;
+        }
+
+        code {
+            background-color: #f8f8f8;
+            padding: 4px 8px;
+            border-radius: 3px;
+            font-family: monospace;
+        }
+
+        .btn-container {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .btn {
+            background-color: #333;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            background-color: #555;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Stacks in Data Structures Tutorial</h1>
+    </header>
+    <div class="container">
+        <h2>Syntax for Stack Operations</h2>
+        <p>
+            A stack is a data structure that follows the Last In, First Out (LIFO) principle. The syntax for stack operations is as follows:
+        </p>
+        <code>
+            // Push operation<br>
+            void push(struct Stack* stack, int item) {<br>
+            &emsp;if (isFull(stack))<br>
+            &emsp;&emsp;return;<br>
+            &emsp;stack->array[++stack->top] = item;<br>
+            }<br><br>
+            // Pop operation<br>
+            int pop(struct Stack* stack) {<br>
+            &emsp;if (isEmpty(stack))<br>
+            &emsp;&emsp;return INT_MIN;<br>
+            &emsp;return stack->array[stack->top--];<br>
+            }
+        </code>
+
+        <h2>Example</h2>
+        <p>
+            Example of using a stack in C:
+        </p>
+        <code>
+            #include&lt;stdio.h&gt;<br>
+            #include&lt;stdlib.h&gt;<br>
+            #include&lt;limits.h&gt;<br>
+            struct Stack {<br>
+            &emsp;int top;<br>
+            &emsp;unsigned capacity;<br>
+            &emsp;int* array;<br>
+            };<br>
+            struct Stack* createStack(unsigned capacity) {<br>
+            &emsp;struct Stack* stack = (struct Stack*)malloc(sizeof(struct Stack));<br>
+            &emsp;stack->capacity = capacity;<br>
+            &emsp;stack->top = -1;<br>
+            &emsp;stack->array = (int*)malloc(stack->capacity * sizeof(int));<br>
+            &emsp;return stack;<br>
+            }<br>
+            int main() {<br>
+            &emsp;struct Stack* stack = createStack(5);<br>
+            &emsp;push(stack, 1);<br>
+            &emsp;push(stack, 2);<br>
+            &emsp;push(stack, 3);<br>
+            &emsp;printf("Popped element: %d", pop(stack));<br>
+            &emsp;return 0;<br>
+            }
+        </code>
+
+        <h2>Program Questions</h2>
+        <p>
+            1. Write a C program to check if a given expression with parentheses is balanced using a stack.<br>
+            2. Create a program to evaluate a postfix expression using a stack.<br>
+            <!-- Add more questions as needed -->
+
+        <h2>Program Solutions</h2>
+        <p>
+            Solutions for the above questions:
+        </p>
+        <code>
+            // Program 1:<br>
+            #include&lt;stdio.h&gt;<br>
+            #include&lt;stdlib.h&gt;<br>
+            #include&lt;stdbool.h&gt;<br>
+            struct Stack {<br>
+            &emsp;int top;<br>
+            &emsp;unsigned capacity;<br>
+            &emsp;char* array;<br>
+            };<br>
+            struct Stack* createStack(unsigned capacity) {<br>
+            &emsp;struct Stack* stack = (struct Stack*)malloc(sizeof(struct Stack));<br>
+            &emsp;stack->capacity = capacity;<br>
+            &emsp;stack->top = -1;<br>
+            &emsp;stack->array = (char*)malloc(stack->capacity * sizeof(char));<br>
+            &emsp;return stack;<br>
+            }<br>
+            bool isBalanced(char exp[]) {<br>
+            &emsp;struct Stack* stack = createStack(strlen(exp));<br>
+            &emsp;for (int i = 0; i < strlen(exp); i++) {<br>
+            &emsp;&emsp;if (exp[i] == '(' || exp[i] == '{' || exp[i] == '[') {<br>
+            &emsp;&emsp;&emsp;push(stack, exp[i]);<br>
+            &emsp;&emsp;} else if (exp[i] == ')' || exp[i] == '}' || exp[i] == ']') {<br>
+            &emsp;&emsp;&emsp;if (isEmpty(stack))<br>
+            &emsp;&emsp;&emsp;&emsp;return false;<br>
+            &emsp;&emsp;&emsp;if (!isMatchingPair(pop(stack), exp[i]))<br>
+            &emsp;&emsp;&emsp;&emsp;return false;<br>
+            &emsp;&emsp;}<br>
+            &emsp;}<br>
+            &emsp;return isEmpty(stack);<br>
+            }<br>
+            int main() {<br>
+            &emsp;char exp[] = "{[()]}";<br>
+            &emsp;if (isBalanced(exp))<br>
+            &emsp;&emsp;printf("Balanced");<br>
+            &emsp;else<br>
+            &emsp;&emsp;printf("Not Balanced");<br>
+            &emsp;return 0;<br>
+            }<br>
+
+            // Program 2:<br>
+            #include&lt;stdio.h&gt;<br>
+            #include&lt;stdlib.h&gt;<br>
+            #include&lt;ctype.h&gt;<br>
+            struct Stack {<br>
+            &emsp;int top;<br>
+            &emsp;unsigned capacity;<br>
+            &emsp;int* array;<br>
+            };<br>
+            struct Stack* createStack(unsigned capacity) {<br>
+            &emsp;struct Stack* stack = (struct Stack*)malloc(sizeof(struct Stack));<br>
+            &emsp;stack->capacity = capacity;<br>
+            &emsp;stack->top = -1;<br>
+            &emsp;stack->array = (int*)malloc(stack->capacity * sizeof(int));<br>
+            &emsp;return stack;<br>
+            }<br>
+            int evaluatePostfix(char* exp) {<br>
+            &emsp;struct Stack* stack = createStack(strlen(exp));<br>
+            &emsp;for (int i = 0; i < strlen(exp); i++) {<br>
+            &emsp;&emsp;if (isdigit(exp[i])) {<br>
+            &emsp;&emsp;&emsp;push(stack, exp[i] - '0');<br>
+            &emsp;&emsp;} else {<br>
+            &emsp;&emsp;&emsp;int operand2 = pop(stack);<br>
+            &emsp;&emsp;&emsp;int operand1 = pop(stack);<br>
+            &emsp;&emsp;&emsp;switch (exp[i]) {<br>
+            &emsp;&emsp;&emsp;&emsp;case '+': push(stack, operand1 + operand2); break;<br>
+            &emsp;&emsp;&emsp;&emsp;case '-': push(stack, operand1 - operand2); break;<br>
+            &emsp;&emsp;&emsp;&emsp;case '*': push(stack, operand1 * operand2); break;<br>
+            &emsp;&emsp;&emsp;&emsp;case '/': push(stack, operand1 / operand2); break;<br>
+            &emsp;&emsp;&emsp;}<br>
+            &emsp;&emsp;}<br>
+            &emsp;}<br>
+            &emsp;return pop(stack);<br>
+            }<br>
+            int main() {<br>
+            &emsp;char exp[] = "231*+9-";<br>
+            &emsp;printf("Result: %d", evaluatePostfix(exp));<br>
+            &emsp;return 0;<br>
+            }<br>
+            <!-- Add solutions for other questions -->
+        </code>
+        </div>
+        <div class="btn-container">
+            <a href="DS5.html" class="btn">Next</a>
+        </div>
+    </div>
+</body>
+</html>

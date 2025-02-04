@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Tutorial Site</title>
+    <style>
+        /* Reset some default styles */
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        /* Homepage styles */
+        #homepage {
+            background-color: #f4f4f4;
+            text-align: center;
+            padding: 20px;
+        }
+
+        #course-container {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+        }
+
+        .course {
+            margin: 20px;
+            padding: 10px;
+            background-color: #fff;
+            border: 1px solid #ddd;
+            box-shadow: 0px 0px 5px #ddd;
+            text-align: center;
+        }
+
+        .price-panel {
+            background-color: #333;
+            color: #fff;
+            padding: 10px;
+            border-radius: 5px;
+            margin-top: 10px;
+        }
+
+        /* Decorate the title */
+        #site-title {
+            font-size: 36px;
+            color: #333;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            margin-bottom: 20px;
+        }
+
+        /* Add hover effect to the course containers */
+        .course:hover {
+            transform: scale(1.05);
+            transition: transform 0.3s;
+        }
+
+        /* Make the entire panel a link */
+        #homepage-link {
+            text-decoration: none;
+            color: #333;
+            font-size: 20px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div id="homepage">
+        <!-- Decorative title -->
+        <h1 id="site-title">Welcome to Sprint Tutorial Site</h1>
+        <div id="course-container">
+            <div class="course">
+                <a href="C1.html">
+                    <img src="CA.png" alt="Course 1" width="250" height="200">
+                </a>
+                <div class="price-panel">
+                    Price: Rs. 3199/- <br>
+                    Duration: 44 hours
+                </div>
+            </div>
+
+            <div class="course">
+                <a href="DS1.html">
+                    <img src="DSA.png" alt="Course 2" width="250" height="200">
+                </a>
+                <div class="price-panel">
+                    Price: Rs. 3199/- <br>
+                    Duration: 58.5 hours
+                </div>
+            </div>
+
+            <div class="course">
+                <a href="P1.html">
+                    <img src="PYTHONA.png" alt="Course 3" width="250" height="200">
+                </a>
+                <div class="price-panel">
+                    Price: Rs. 3199/- <br>
+                    Duration: 58 hours
+                </div>
+            </div>
+        </div>
+
+        <!-- Link the entire panel to another page -->
+        <a id="homepage-link" href="Frames4.html" target="iframe:nth-child(2)">
+            Explore More Courses
+        </a>
+    </div>
+</body>
+</html>

@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>File Handling and Exception Handling in Python Programming</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        h1 {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+
+        h2 {
+            font-size: 20px;
+            margin-top: 20px;
+            margin-bottom: 10px;
+        }
+
+        p {
+            font-size: 18px;
+            line-height: 1.6;
+        }
+
+        code {
+            background-color: #f8f8f8;
+            padding: 4px 8px;
+            border-radius: 3px;
+            font-family: monospace;
+        }
+
+        .program-container {
+            margin-top: 20px;
+        }
+
+        .question {
+            margin-bottom: 10px;
+        }
+
+        .btn-container {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .btn {
+            background-color: #333;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            background-color: #555;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>File Handling and Exception Handling in Python Programming</h1>
+    </header>
+    <div class="container">
+        <h2>File Handling in Python</h2>
+        <p>
+            File handling allows you to read from and write to files. Python provides built-in functions for file operations.
+        </p>
+        <code>
+            # Opening a file for reading<br>
+            file = open("filename.txt", "r")<br>
+            content = file.read()<br>
+            file.close()<br>
+            <br>
+            # Opening a file for writing<br>
+            file = open("filename.txt", "w")<br>
+            file.write("Hello, World!")<br>
+            file.close()
+        </code>
+
+        <h2>Examples</h2>
+        <div class="program-container">
+            <p class="question">Example 1: Read content from a file</p>
+            <code>
+                file = open("sample.txt", "r")<br>
+                content = file.read()<br>
+                file.close()<br>
+                print(content)
+            </code>
+
+            <p class="question">Example 2: Write content to a file</p>
+            <code>
+                file = open("output.txt", "w")<br>
+                file.write("This is a sample text.")<br>
+                file.close()
+            </code>
+        </div>
+
+        <h2>Exception Handling in Python</h2>
+        <p>
+            Exception handling allows you to handle errors and exceptions in a graceful manner, preventing your program from crashing.
+        </p>
+        <code>
+            try:<br>
+            &emsp; # Code that may raise an exception<br>
+            except ExceptionType as e:<br>
+            &emsp; # Code to handle the exception
+        </code>
+
+        <h2>Program Questions</h2>
+        <div class="program-container">
+            <p class="question">1. Write a Python program to copy the content of one file to another.</p>
+            <p class="question">2. Implement exception handling to handle a FileNotFoundError while reading a file.</p>
+            <!-- Add more questions as needed -->
+        </div>
+
+        <h2>Program Solutions</h2>
+        <div class="program-container">
+            <p class="question">1. Write a Python program to copy the content of one file to another.</p>
+            <code>
+                with open("source.txt", "r") as source_file:<br>
+                &emsp; with open("destination.txt", "w") as destination_file:<br>
+                &emsp;&emsp; destination_file.write(source_file.read())
+            </code>
+
+            <p class="question">2. Implement exception handling to handle a FileNotFoundError while reading a file.</p>
+            <code>
+                try:<br>
+                &emsp; with open("nonexistent_file.txt", "r") as file:<br>
+                &emsp;&emsp; content = file.read()<br>
+                except FileNotFoundError as e:<br>
+                &emsp; print("File not found:", e)
+            </code>
+            <!-- Add solutions for other questions -->
+        </div>
+
+        <div class="btn-container">
+            <a href="P7.html" class="btn">Next</a>
+        </div>
+    </div>
+</body>
+</html>

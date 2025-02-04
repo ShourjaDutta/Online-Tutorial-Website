@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Structures in C Programming</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        h1 {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+
+        h2 {
+            font-size: 20px;
+            margin-top: 20px;
+            margin-bottom: 10px;
+        }
+
+        p {
+            font-size: 18px;
+            line-height: 1.6;
+        }
+
+        code {
+            background-color: #f8f8f8;
+            padding: 4px 8px;
+            border-radius: 3px;
+            font-family: monospace;
+        }
+
+        .btn-container {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .btn {
+            background-color: #333;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            background-color: #555;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Structures in C Programming</h1>
+    </header>
+    <div class="container">
+        <h2>Syntax for Structure</h2>
+        <p>
+            A structure in C is a user-defined data type that allows grouping variables of different data types under a single name. The syntax for defining a structure is as follows:
+        </p>
+        <code>
+            struct structure_name {<br>
+            &emsp;data_type member1;<br>
+            &emsp;data_type member2;<br>
+            &emsp;...<br>
+            };
+        </code>
+
+        <h2>Example</h2>
+        <p>
+            Example of using a structure in C:
+        </p>
+        <code>
+            #include&lt;stdio.h&gt;<br>
+            struct Point {<br>
+            &emsp;int x;<br>
+            &emsp;int y;<br>
+            };<br>
+            int main() {<br>
+            &emsp;struct Point p1;<br>
+            &emsp;p1.x = 10;<br>
+            &emsp;p1.y = 20;<br>
+            &emsp;printf("Coordinates: (%d, %d)", p1.x, p1.y);<br>
+            &emsp;return 0;<br>
+            }
+        </code>
+
+        <h2>Program Questions</h2>
+        <p>
+            1. Write a C program to store and display information about a student using a structure.<br>
+            2. Create a program to find the area of a rectangle using a structure.<br>
+            <!-- Add more questions as needed -->
+
+        <h2>Program Solutions</h2>
+        <p>
+            Solutions for the above questions:
+        </p>
+        <code>
+            // Program 1:<br>
+            #include&lt;stdio.h&gt;<br>
+            struct Student {<br>
+            &emsp;char name[50];<br>
+            &emsp;int age;<br>
+            &emsp;float marks;<br>
+            };<br>
+            int main() {<br>
+            &emsp;struct Student s1;<br>
+            &emsp;printf("Enter student details:\n");<br>
+            &emsp;printf("Name: ");<br>
+            &emsp;scanf("%s", s1.name);<br>
+            &emsp;printf("Age: ");<br>
+            &emsp;scanf("%d", &s1.age);<br>
+            &emsp;printf("Marks: ");<br>
+            &emsp;scanf("%f", &s1.marks);<br>
+            &emsp;printf("Student Details:\nName: %s\nAge: %d\nMarks: %.2f", s1.name, s1.age, s1.marks);<br>
+            &emsp;return 0;<br>
+            }<br>
+
+            // Program 2:<br>
+            #include&lt;stdio.h&gt;<br>
+            struct Rectangle {<br>
+            &emsp;int length;<br>
+            &emsp;int width;<br>
+            };<br>
+            int main() {<br>
+            &emsp;struct Rectangle r1;<br>
+            &emsp;printf("Enter dimensions of the rectangle:\n");<br>
+            &emsp;printf("Length: ");<br>
+            &emsp;scanf("%d", &r1.length);<br>
+            &emsp;printf("Width: ");<br>
+            &emsp;scanf("%d", &r1.width);<br>
+            &emsp;int area = r1.length * r1.width;<br>
+            &emsp;printf("Area of the rectangle: %d", area);<br>
+            &emsp;return 0;<br>
+            }<br>
+            <!-- Add solutions for other questions -->
+        </code>
+        </div>
+        <div class="btn-container">
+            <a href="C7.html" class="btn">Next</a>
+        </div>
+    </div>
+</body>
+</html>

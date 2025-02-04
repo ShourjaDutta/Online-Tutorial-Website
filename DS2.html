@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arrays in Data Structures Tutorial</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        h1 {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+
+        h2 {
+            font-size: 20px;
+            margin-top: 20px;
+            margin-bottom: 10px;
+        }
+
+        p {
+            font-size: 18px;
+            line-height: 1.6;
+        }
+
+        code {
+            background-color: #f8f8f8;
+            padding: 4px 8px;
+            border-radius: 3px;
+            font-family: monospace;
+        }
+
+        .btn-container {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .btn {
+            background-color: #333;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            background-color: #555;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Arrays in Data Structures Tutorial</h1>
+    </header>
+    <div class="container">
+        <h2>Syntax for Array Declaration</h2>
+        <p>
+            An array is a collection of elements of the same type stored in contiguous memory locations. The syntax for declaring an array is as follows:
+        </p>
+        <code>
+            data_type array_name[array_size];
+        </code>
+
+        <h2>Example</h2>
+        <p>
+            Example of using an array in C:
+        </p>
+        <code>
+            #include&lt;stdio.h&gt;<br>
+            int main() {<br>
+            &emsp;int numbers[5] = {1, 2, 3, 4, 5};<br>
+            &emsp;printf("First element: %d", numbers[0]);<br>
+            &emsp;return 0;<br>
+            }
+        </code>
+
+        <h2>Program Questions</h2>
+        <p>
+            1. Write a C program to find the sum of elements in an array.<br>
+            2. Create a program to find the largest element in an array.<br>
+            <!-- Add more questions as needed -->
+
+        <h2>Program Solutions</h2>
+        <p>
+            Solutions for the above questions:
+        </p>
+        <code>
+            // Program 1:<br>
+            #include&lt;stdio.h&gt;<br>
+            int main() {<br>
+            &emsp;int numbers[5] = {1, 2, 3, 4, 5};<br>
+            &emsp;int sum = 0;<br>
+            &emsp;for (int i = 0; i < 5; i++) {<br>
+            &emsp;&emsp;sum += numbers[i];<br>
+            &emsp;}<br>
+            &emsp;printf("Sum of elements: %d", sum);<br>
+            &emsp;return 0;<br>
+            }<br>
+
+            // Program 2:<br>
+            #include&lt;stdio.h&gt;<br>
+            int main() {<br>
+            &emsp;int numbers[5] = {10, 5, 8, 15, 7};<br>
+            &emsp;int max = numbers[0];<br>
+            &emsp;for (int i = 1; i < 5; i++) {<br>
+            &emsp;&emsp;if (numbers[i] > max) {<br>
+            &emsp;&emsp;&emsp;max = numbers[i];<br>
+            &emsp;&emsp;}<br>
+            &emsp;}<br>
+            &emsp;printf("Largest element: %d", max);<br>
+            &emsp;return 0;<br>
+            }<br>
+            <!-- Add solutions for other questions -->
+        </code>
+        </div>
+        <div class="btn-container">
+            <a href="DS3.html" class="btn">Next</a>
+        </div>
+    </div>
+</body>
+</html>

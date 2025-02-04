@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Python Programming Quiz</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        h1 {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+
+        .question-container {
+            margin-bottom: 20px;
+        }
+
+        .question {
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+
+        .options {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .option {
+            margin-bottom: 10px;
+        }
+
+        .btn-container {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .btn {
+            background-color: #333;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            background-color: #555;
+        }
+
+        #timer {
+            text-align: center;
+            font-size: 18px;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Python Programming Quiz</h1>
+    </header>
+    <div class="container">
+        <div id="timer">Timer: <span id="countdown">10:00</span></div>
+
+        <div class="question-container">
+            <div class="question">1. What is the capital of Python?</div>
+            <div class="options">
+                <label class="option"><input type="radio" name="q1" value="A"> A. Monty</label>
+                <label class="option"><input type="radio" name="q1" value="B"> B. Guido</label>
+                <label class="option"><input type="radio" name="q1" value="C"> C. Django</label>
+                <label class="option"><input type="radio" name="q1" value="D"> D. Snakey</label>
+            </div>
+        </div>
+
+        <div class="question-container">
+            <div class="question">2. Which of the following is not a data type in Python?</div>
+            <div class="options">
+                <label class="option"><input type="radio" name="q2" value="A"> A. int</label>
+                <label class="option"><input type="radio" name="q2" value="B"> B. float</label>
+                <label class="option"><input type="radio" name="q2" value="C"> C. char</label>
+                <label class="option"><input type="radio" name="q2" value="D"> D. str</label>
+            </div>
+        </div>
+
+        <!-- Add more questions as needed -->
+
+        <div class="btn-container">
+            <button onclick="startQuiz()" class="btn">Start Quiz</button>
+            <button onclick="finishQuiz()" class="btn" id="finishBtn" disabled>Finish</button>
+        </div>
+    </div>
+
+    <script>
+        let timer;
+        let totalTime = 600; // 10 minutes in seconds
+        let timeRemaining = totalTime;
+
+        function startTimer() {
+            timer = setInterval(updateTimer, 1000);
+        }
+
+        function updateTimer() {
+            const minutes = Math.floor(timeRemaining / 60);
+            const seconds = timeRemaining % 60;
+
+            document.getElementById('countdown').innerText = `${minutes}:${seconds < 10 ? '0' : ''}${seconds}`;
+
+            if (timeRemaining === 0) {
+                clearInterval(timer);
+                finishQuiz();
+            } else {
+                timeRemaining--;
+            }
+        }
+
+        function startQuiz() {
+            startTimer();
+            document.querySelectorAll('input[type="radio"]').forEach(input => {
+                input.removeAttribute('disabled');
+            });
+            document.getElementById('finishBtn').removeAttribute('disabled');
+        }
+
+        function finishQuiz() {
+            clearInterval(timer);
+            const totalQuestions = 2; // Update this based on the number of questions
+            let score = 0;
+
+            for (let i = 1; i <= totalQuestions; i++) {
+                const selectedOption = document.querySelector(`input[name="q${i}"]:checked`);
+                if (selectedOption) {
+                    const selectedValue = selectedOption.value;
+                    // Add the correct answer logic here (e.g., if (selectedValue === 'CorrectAnswer'))
+                    score += 2;
+                }
+            }
+
+            const percentage = (score / 4) * 100;
+
+            const resultMessage = percentage > 80 ? 'Congratulations on completing the course successfully!' : 'Try Again';
+
+            alert(`Your score: ${score}/${totalQuestions * 2}\n${resultMessage}`);
+        }
+    </script>
+</body>
+</html>

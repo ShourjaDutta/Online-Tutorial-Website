@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online Tutorial Centre</title>
+    <style>
+        /* Reset some default styles */
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4; /* Background color other than white */
+        }
+
+        /* Faculty container */
+        .faculty-container {
+            display: flex;
+            justify-content: space-between;
+            background-color: #fff;
+            padding: 20px;
+            margin: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Faculty panel */
+        .faculty-panel {
+            flex: 1;
+            padding: 20px;
+        }
+
+        /* Faculty image */
+        .faculty-image {
+            flex: 1;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .faculty-image img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 50%;
+        }
+
+        /* Faculty details */
+        .faculty-details h2 {
+            font-size: 24px;
+            margin: 0;
+        }
+
+        .faculty-details p {
+            margin: 10px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="faculty-container">
+        <!-- Faculty 1 -->
+        <div class="faculty-panel">
+            <div class="faculty-image">
+                <img src="Avatar.png" width="250" height="200" alt="Faculty 1">
+            </div>
+            <div class="faculty-details">
+                <h2>Vlad Budnitski</h2>
+                <p>Position: Instructor</p>
+                <p>Expertise: C Programming</p>
+                <p>Email: vladbudnitski@gmail.com</p>
+            </div>
+        </div>
+
+        <!-- Faculty 2 -->
+        <div class="faculty-panel">
+            <div class="faculty-image">
+                <img src="Avatar.png" width="250" height="200" alt="Faculty 2">
+            </div>
+            <div class="faculty-details">
+                <h2>Abdul Bari</h2>
+                <p>Position: Professor</p>
+                <p>Expertise: Data Structures</p>
+                <p>Email: abdulbari@gmail.com</p>
+            </div>
+        </div>
+
+        <!-- Faculty 3 -->
+        <div class="faculty-panel">
+            <div class="faculty-image">
+                <img src="Avatar.png" width="250" height="200" alt="Faculty 3">
+            </div>
+            <div class="faculty-details">
+                <h2>Dr. Angela Yu</h2>
+                <p>Position: Lecturer</p>
+                <p>Expertise: Python</p>
+                <p>Email: angelayu@gmail.com</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

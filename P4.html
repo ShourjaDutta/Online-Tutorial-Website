@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Control Flow and Loops in Python Programming</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        h1 {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+
+        h2 {
+            font-size: 20px;
+            margin-top: 20px;
+            margin-bottom: 10px;
+        }
+
+        p {
+            font-size: 18px;
+            line-height: 1.6;
+        }
+
+        code {
+            background-color: #f8f8f8;
+            padding: 4px 8px;
+            border-radius: 3px;
+            font-family: monospace;
+        }
+
+        .program-container {
+            margin-top: 20px;
+        }
+
+        .question {
+            margin-bottom: 10px;
+        }
+
+        .btn-container {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .btn {
+            background-color: #333;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            background-color: #555;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Control Flow and Loops in Python Programming</h1>
+    </header>
+    <div class="container">
+        <h2>if-else Statement</h2>
+        <p>
+            The if-else statement is used for decision-making in Python. It allows the program to execute different blocks of code based on a specified condition.
+        </p>
+        <code>
+            if condition:<br>
+            &emsp; # Code to be executed if the condition is True<br>
+            else:<br>
+            &emsp; # Code to be executed if the condition is False
+        </code>
+
+        <h2>Examples</h2>
+        <div class="program-container">
+            <p class="question">Example 1: Check if a number is even or odd</p>
+            <code>
+                num = 10<br>
+                if num % 2 == 0:<br>
+                &emsp; print("Even")<br>
+                else:<br>
+                &emsp; print("Odd")
+            </code>
+
+            <p class="question">Example 2: Determine if a person is eligible to vote</p>
+            <code>
+                age = 18<br>
+                if age >= 18:<br>
+                &emsp; print("Eligible to vote")<br>
+                else:<br>
+                &emsp; print("Not eligible to vote")
+            </code>
+        </div>
+
+        <h2>Program Questions</h2>
+        <div class="program-container">
+            <p class="question">1. Write a Python program to find the maximum of two numbers using if-else.</p>
+            <p class="question">2. Check if a given year is a leap year or not.</p>
+            <!-- Add more questions as needed -->
+        </div>
+
+        <h2>Program Solutions</h2>
+        <div class="program-container">
+            <p class="question">1. Write a Python program to find the maximum of two numbers using if-else.</p>
+            <code>
+                num1 = 15<br>
+                num2 = 20<br>
+                if num1 > num2:<br>
+                &emsp; print("Maximum:", num1)<br>
+                else:<br>
+                &emsp; print("Maximum:", num2)
+            </code>
+
+            <p class="question">2. Check if a given year is a leap year or not.</p>
+            <code>
+                year = 2024<br>
+                if (year % 4 == 0 and year % 100 != 0) or (year % 400 == 0):<br>
+                &emsp; print("Leap year")<br>
+                else:<br>
+                &emsp; print("Not a leap year")
+            </code>
+            <!-- Add solutions for other questions -->
+        </div>
+
+        <div class="btn-container">
+            <a href="P5.html" class="btn">Next</a>
+        </div>
+    </div>
+</body>
+</html>

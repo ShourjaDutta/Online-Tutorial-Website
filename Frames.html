@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Combined Webpages</title>
+    <style>
+        /* Remove margin and padding to eliminate white space around the frame */
+        body, html {
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Set the container's width and height */
+        .frame-container {
+            width: 100%;
+            height: 100vh;
+            overflow: auto; /* Hide scrollbars */
+            position: relative; /* Required for absolute positioning of iframes */
+        }
+
+        /* Style individual iframes */
+        .iframe {
+            border: none; /* Remove borders */
+            position: absolute; /* Position each iframe */
+            width: 100%;
+        }
+
+        /* Set heights for each iframe */
+        .iframe:nth-child(1) {
+            height: 50px; /* Adjust the height for the first iframe */
+            top: 0;
+        }
+
+        .iframe:nth-child(2) {
+            height: 500px; /* Adjust the height for the second iframe */
+            top: 50px; /* Position below the first iframe */
+        }
+
+        .iframe:nth-child(3) {
+            height: 600px; /* Adjust the height for the fourth iframe */
+            top: 550px; /* Position below the third iframe */
+        }
+
+	.iframe:nth-child(4) {
+            height: 100px; /* Adjust the height for the fourth iframe */
+            top: 1150px; /* Position below the third iframe */
+        }
+    </style>
+</head>
+<body>
+    <div class="frame-container">
+        <!-- Iframe 1 -->
+        <iframe class="iframe" src="Topmenu.html"></iframe>
+        
+        <!-- Iframe 2 -->
+        <iframe class="iframe" src="Home.html"></iframe>
+       
+        <iframe class="iframe" src="Faculty.html"></iframe>
+
+	<iframe class="iframe" src="Footer.html"></iframe>
+    </div>
+</body>
+</html>

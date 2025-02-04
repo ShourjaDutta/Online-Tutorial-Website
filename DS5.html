@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Queues in Data Structures Tutorial</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        h1 {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+
+        h2 {
+            font-size: 20px;
+            margin-top: 20px;
+            margin-bottom: 10px;
+        }
+
+        p {
+            font-size: 18px;
+            line-height: 1.6;
+        }
+
+        code {
+            background-color: #f8f8f8;
+            padding: 4px 8px;
+            border-radius: 3px;
+            font-family: monospace;
+        }
+
+        .btn-container {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .btn {
+            background-color: #333;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            background-color: #555;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Queues in Data Structures Tutorial</h1>
+    </header>
+    <div class="container">
+        <h2>Syntax for Queue Operations</h2>
+        <p>
+            A queue is a data structure that follows the First In, First Out (FIFO) principle. The syntax for queue operations is as follows:
+        </p>
+        <code>
+            // Enqueue operation<br>
+            void enqueue(struct Queue* queue, int item) {<br>
+            &emsp;if (isFull(queue))<br>
+            &emsp;&emsp;return;<br>
+            &emsp;queue->rear = (queue->rear + 1) % queue->capacity;<br>
+            &emsp;queue->array[queue->rear] = item;<br>
+            }<br><br>
+            // Dequeue operation<br>
+            int dequeue(struct Queue* queue) {<br>
+            &emsp;if (isEmpty(queue))<br>
+            &emsp;&emsp;return INT_MIN;<br>
+            &emsp;int item = queue->array[queue->front];<br>
+            &emsp;queue->front = (queue->front + 1) % queue->capacity;<br>
+            &emsp;return item;<br>
+            }
+        </code>
+
+        <h2>Example</h2>
+        <p>
+            Example of using a queue in C:
+        </p>
+        <code>
+            #include&lt;stdio.h&gt;<br>
+            #include&lt;stdlib.h&gt;<br>
+            #include&lt;limits.h&gt;<br>
+            struct Queue {<br>
+            &emsp;int front, rear, size;<br>
+            &emsp;unsigned capacity;<br>
+            &emsp;int* array;<br>
+            };<br>
+            struct Queue* createQueue(unsigned capacity) {<br>
+            &emsp;struct Queue* queue = (struct Queue*)malloc(sizeof(struct Queue));<br>
+            &emsp;queue->capacity = capacity;<br>
+            &emsp;queue->front = queue->size = 0;<br>
+            &emsp;queue->rear = capacity - 1;<br>
+            &emsp;queue->array = (int*)malloc(queue->capacity * sizeof(int));<br>
+            &emsp;return queue;<br>
+            }<br>
+            int main() {<br>
+            &emsp;struct Queue* queue = createQueue(5);<br>
+            &emsp;enqueue(queue, 1);<br>
+            &emsp;enqueue(queue, 2);<br>
+            &emsp;enqueue(queue, 3);<br>
+            &emsp;printf("Dequeued element: %d", dequeue(queue));<br>
+            &emsp;return 0;<br>
+            }
+        </code>
+
+        <h2>Program Questions</h2>
+        <p>
+            1. Write a C program to implement a circular queue.<br>
+            2. Create a program to reverse the first K elements of a queue.<br>
+            <!-- Add more questions as needed -->
+
+        <h2>Program Solutions</h2>
+        <p>
+            Solutions for the above questions:
+        </p>
+        <code>
+            // Program 1:<br>
+            #include&lt;stdio.h&gt;<br>
+            #include&lt;stdlib.h&gt;<br>
+            struct Queue {<br>
+            &emsp;int front, rear, size;<br>
+            &emsp;unsigned capacity;<br>
+            &emsp;int* array;<br>
+            };<br>
+            int isFull(struct Queue* queue) {<br>
+            &emsp;return (queue->size == queue->capacity);<br>
+            }<br>
+            int isEmpty(struct Queue* queue) {<br>
+            &emsp;return (queue->size == 0);<br>
+            }<br>
+            void enqueue(struct Queue* queue, int item) {<br>
+            &emsp;if (isFull(queue))<br>
+            &emsp;&emsp;return;<br>
+            &emsp;queue->rear = (queue->rear + 1) % queue->capacity;<br>
+            &emsp;queue->array[queue->rear] = item;<br>
+            &emsp;queue->size = queue->size + 1;<br>
+            }<br>
+            int dequeue(struct Queue* queue) {<br>
+            &emsp;if (isEmpty(queue))<br>
+            &emsp;&emsp;return -1;<br>
+            &emsp;int item = queue->array[queue->front];<br>
+            &emsp;queue->front = (queue->front + 1) % queue->capacity;<br>
+            &emsp;queue->size = queue->size - 1;<br>
+            &emsp;return item;<br>
+            }<br>
+            // Add other queue operations as needed<br>
+            int main() {<br>
+            &emsp;struct Queue* queue = createQueue(5);<br>
+            &emsp;enqueue(queue, 1);<br>
+            &emsp;enqueue(queue, 2);<br>
+            &emsp;enqueue(queue, 3);<br>
+            &emsp;return 0;<br>
+            }<br>
+
+            // Program 2:<br>
+            #include&lt;stdio.h&gt;<br>
+            #include&lt;stdlib.h&gt;<br>
+            void reverseFirstK(struct Queue* queue, int k) {<br>
+            &emsp;int* temp = (int*)malloc(k * sizeof(int));<br>
+            &emsp;for (int i = 0; i < k; i++) {<br>
+            &emsp;&emsp;temp[i] = dequeue(queue);<br>
+            &emsp;}<br>
+            &emsp;for (int i = k - 1; i >= 0; i--) {<br>
+            &emsp;&emsp;enqueue(queue, temp[i]);<br>
+            &emsp;}<br>
+            &emsp;for (int i = 0; i < queue->size - k; i++) {<br>
+            &emsp;&emsp;enqueue(queue, dequeue(queue));<br>
+            &emsp;}<br>
+            }<br>
+            int main() {<br>
+            &emsp;struct Queue* queue = createQueue(5);<br>
+            &emsp;enqueue(queue, 1);<br>
+            &emsp;enqueue(queue, 2);<br>
+            &emsp;enqueue(queue, 3);<br>
+            &emsp;reverseFirstK(queue, 2);<br>
+            &emsp;return 0;<br>
+            }<br>
+            <!-- Add solutions for other questions -->
+        </code>
+        </div>
+        <div class="btn-container">
+            <a href="DS6.html" class="btn">Next</a>
+        </div>
+    </div>
+</body>
+</html>

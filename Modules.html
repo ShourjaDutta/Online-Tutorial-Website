@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online Courses</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f2f2f2;
+        }
+
+        .course-container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .course {
+            margin: 20px;
+            width: 300px;
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+            transition: transform 0.2s;
+        }
+
+        .course:hover {
+            transform: translateY(-5px);
+        }
+
+        .course img {
+            width: 100%;
+            height: auto;
+            border-radius: 5px 5px 0 0;
+        }
+
+        .course-details {
+            padding: 10px;
+            text-align: center;
+        }
+
+        .course-title {
+            font-weight: bold;
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+        }
+
+        .course-price {
+            color: #007bff;
+            font-size: 1.1rem;
+        }
+
+        .course-duration {
+            margin-top: 5px;
+            font-size: 0.9rem;
+            color: #777;
+        }
+
+        .course-link {
+            display: block;
+            padding: 10px;
+            text-align: center;
+            background-color: #007bff;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 0 0 5px 5px;
+            transition: background-color 0.2s;
+        }
+
+        .course-link:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="course-container">
+        <div class="course">
+            <img src="CA.png" alt="C" width="250" height="200">
+            <div class="course-details">
+                <div class="course-title">C</div>
+                <div class="course-price">Rs. 3199/-</div>
+                <div class="course-duration">Duration: 44 hours</div>
+                <a href="C1.html" class="course-link">Learn More</a>
+            </div>
+        </div>
+	
+	<br>
+
+        <div class="course">
+            <img src="DSA.png" alt="DSA" width="250" height="200">
+            <div class="course-details">
+                <div class="course-title">DSA</div>
+                <div class="course-price">Rs. 3199/-</div>
+                <div class="course-duration">Duration: 58.5 hours</div>
+                <a href="DS1.html" class="course-link">Learn More</a>
+            </div>
+        </div>
+
+	<div class="course">
+            <img src="PYTHONA.png" alt="Course 3" width="250" height="200">
+            <div class="course-details">
+                <div class="course-title">Python</div>
+                <div class="course-price">Rs. 3199/-</div>
+                <div class="course-duration">Duration: 58 hours</div>
+                <a href="P1.html" class="course-link">Learn More</a>
+            </div>
+        </div>
+
+
+        <!-- Add more courses as needed -->
+    </div>
+</body>
+</html>

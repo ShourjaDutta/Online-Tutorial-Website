@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trees in Data Structures Tutorial</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        h1 {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+
+        h2 {
+            font-size: 20px;
+            margin-top: 20px;
+            margin-bottom: 10px;
+        }
+
+        p {
+            font-size: 18px;
+            line-height: 1.6;
+        }
+
+        code {
+            background-color: #f8f8f8;
+            padding: 4px 8px;
+            border-radius: 3px;
+            font-family: monospace;
+        }
+
+        .btn-container {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .btn {
+            background-color: #333;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            background-color: #555;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Trees in Data Structures Tutorial</h1>
+    </header>
+    <div class="container">
+        <h2>Syntax for Tree Node</h2>
+        <p>
+            A tree is a hierarchical data structure that consists of nodes connected by edges. The syntax for a tree node is as follows:
+        </p>
+        <code>
+            struct TreeNode {<br>
+            &emsp;data_type data;<br>
+            &emsp;struct TreeNode* left;<br>
+            &emsp;struct TreeNode* right;<br>
+            };
+        </code>
+
+        <h2>Example</h2>
+        <p>
+            Example of creating a binary tree in C:
+        </p>
+        <code>
+            #include&lt;stdio.h&gt;<br>
+            #include&lt;stdlib.h&gt;<br>
+            struct TreeNode {<br>
+            &emsp;int data;<br>
+            &emsp;struct TreeNode* left;<br>
+            &emsp;struct TreeNode* right;<br>
+            };<br>
+            struct TreeNode* createNode(int data) {<br>
+            &emsp;struct TreeNode* newNode = (struct TreeNode*)malloc(sizeof(struct TreeNode));<br>
+            &emsp;newNode->data = data;<br>
+            &emsp;newNode->left = newNode->right = NULL;<br>
+            &emsp;return newNode;<br>
+            }<br>
+            int main() {<br>
+            &emsp;struct TreeNode* root = createNode(1);<br>
+            &emsp;root->left = createNode(2);<br>
+            &emsp;root->right = createNode(3);<br>
+            &emsp;return 0;<br>
+            }
+        </code>
+
+        <h2>Program Questions</h2>
+        <p>
+            1. Write a C program to find the height of a binary tree.<br>
+            2. Create a program to perform an in-order traversal of a binary tree.<br>
+            <!-- Add more questions as needed -->
+
+        <h2>Program Solutions</h2>
+        <p>
+            Solutions for the above questions:
+        </p>
+        <code>
+            // Program 1:<br>
+            #include&lt;stdio.h&gt;<br>
+            #include&lt;stdlib.h&gt;<br>
+            struct TreeNode {<br>
+            &emsp;int data;<br>
+            &emsp;struct TreeNode* left;<br>
+            &emsp;struct TreeNode* right;<br>
+            };<br>
+            int findHeight(struct TreeNode* root) {<br>
+            &emsp;if (root == NULL)<br>
+            &emsp;&emsp;return 0;<br>
+            &emsp;int leftHeight = findHeight(root->left);<br>
+            &emsp;int rightHeight = findHeight(root->right);<br>
+            &emsp;return 1 + (leftHeight > rightHeight ? leftHeight : rightHeight);<br>
+            }<br>
+            int main() {<br>
+            &emsp;struct TreeNode* root = createNode(1);<br>
+            &emsp;root->left = createNode(2);<br>
+            &emsp;root->right = createNode(3);<br>
+            &emsp;printf("Height of the tree: %d", findHeight(root));<br>
+            &emsp;return 0;<br>
+            }<br>
+
+            // Program 2:<br>
+            #include&lt;stdio.h&gt;<br>
+            #include&lt;stdlib.h&gt;<br>
+            struct TreeNode {<br>
+            &emsp;int data;<br>
+            &emsp;struct TreeNode* left;<br>
+            &emsp;struct TreeNode* right;<br>
+            };<br>
+            void inOrderTraversal(struct TreeNode* root) {<br>
+            &emsp;if (root != NULL) {<br>
+            &emsp;&emsp;inOrderTraversal(root->left);<br>
+            &emsp;&emsp;printf("%d ", root->data);<br>
+            &emsp;&emsp;inOrderTraversal(root->right);<br>
+            &emsp;}<br>
+            }<br>
+            int main() {<br>
+            &emsp;struct TreeNode* root = createNode(1);<br>
+            &emsp;root->left = createNode(2);<br>
+            &emsp;root->right = createNode(3);<br>
+            &emsp;printf("In-order traversal: ");<br>
+            &emsp;inOrderTraversal(root);<br>
+            &emsp;return 0;<br>
+            }<br>
+            <!-- Add solutions for other questions -->
+        </code>
+        </div>
+        <div class="btn-container">
+            <a href="DS7.html" class="btn">Next</a>
+        </div>
+    </div>
+</body>
+</html>
